@@ -24,7 +24,7 @@ To run the development server:
 
 5. Run the development server:
 
-    ng serve
+      ng serve
 
 6. Open your browser and go to `http://localhost:4200/` to see the application.
 
