@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { RoomsComponent } from './rooms.component';
 import { RoomsDataService } from 'src/app/core/services/rooms.service';
 import { of } from 'rxjs';
-import { RoomDto, RoomFilter } from 'src/app/core/models/rooms-resources.model';
+import { RoomFilter } from 'src/app/core/models/rooms-resources.model';
 import { SortType } from 'src/app/core/enums/sort-type.enum';
 import { Router } from '@angular/router';
 
@@ -70,6 +70,5 @@ describe('RoomsComponent', () => {
     component.ngOnDestroy();
     expect(component['destroyed$'].next).toHaveBeenCalled();
     expect(component['destroyed$'].complete).toHaveBeenCalled();
-    expect(roomsDataServiceStub.reset).toHaveBeenCalled();
   });
 });

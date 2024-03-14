@@ -19,3 +19,7 @@
             ROOM</button>
     </div>
 </form>
+<ng-container *ngIf="reservation && reservation.startDate && reservation.endDate">
+    <h2> {{this.getDaysCountBetweenDates(reservation.startDate, reservation.endDate)}} Days. ${{ room.price *
+        this.getDaysCountBetweenDates(reservation.startDate, reservation.endDate) }}</h2>
+</ng-container>

@@ -67,9 +67,4 @@ export class RoomsComponent extends BaseComponent implements OnInit, OnDestroy {
   async onClick(id: number) {
     await this.router.navigateByUrl(`/room/${id}`);
   }
-
-  public override ngOnDestroy(): void {
-    super.ngOnDestroy();
-    this.roomsDataService.reset();
-  }
 }
