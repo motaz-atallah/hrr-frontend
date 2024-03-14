@@ -1,0 +1,27 @@
+<kendo-grid class="f-flex" [kendoGridBinding]="reservations" [sortable]="sortSettings" [filterable]="'menu'" [groupable]="true"
+  [resizable]="true" [columnMenu]="{ filter: true }">
+  <kendo-grid-command-column title="" [width]="40">>
+    <ng-template kendoGridCellTemplate let-dataItem>
+      <span title="Cancel Reservation" class="fa fa-duotone fa-trash"
+        (click)="onCancelReservationClicked(dataItem.id)"></span>
+    </ng-template>
+  </kendo-grid-command-column>
+  <kendo-grid-column field="roomNumber" title="Room Number"> </kendo-grid-column>
+  <kendo-grid-column field="roomType" title="Room Type"> </kendo-grid-column>
+  <kendo-grid-column field="guestName" title="Guest Name"> </kendo-grid-column>
+  <kendo-grid-column field="startDate" title="Start Date"> </kendo-grid-column>
+  <kendo-grid-column field="endDate" title="End Date"> </kendo-grid-column>
+  <kendo-grid-column field="totalPrice" title="Total Price"> </kendo-grid-column>
+</kendo-grid>
+
+<kendo-dialog title="Confirmation" *ngIf="opened" (close)="close()">
+  <p>Do you really want to cancel this Reservation?</p>
+  <kendo-dialog-actions>
+    <button kendoButton (click)="confirm()" themeColor="primary">
+      Yes
+    </button>
+    <button kendoButton (click)="close()">
+      No
+    </button>
+  </kendo-dialog-actions>
+</kendo-dialog>

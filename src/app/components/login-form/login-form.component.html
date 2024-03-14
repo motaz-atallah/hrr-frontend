@@ -1,0 +1,20 @@
+<div class="container f-flex f-flex-justify-center f-overflow-y-auto">
+    <div class="wrapper f-flex">
+        <div class="form f-overflow-hidden">
+            <form class="f-flex-column f-flex-justify-center" #form="ngForm" (ngSubmit)="login()">
+                <div class="f-flex-column element">
+                    <label for="username">Username</label>
+                    <kendo-textbox type="text" class="input" name="username" placeholder="Enter your User Name"
+                        [(ngModel)]="username" required></kendo-textbox>
+                </div>
+                <div class="f-flex-column element">
+                    <label for="password">Password</label>
+                    <kendo-textbox type="password" class="input" name="password" placeholder="Enter your Password"
+                        [(ngModel)]="password" required></kendo-textbox>
+                </div>
+                <button kendoButton type="submit" themeColor="primary" [disabled]="!form.valid">Login</button>
+                <div class="error-message" *ngIf="errorMessage"> {{errorMessage}}</div>
+            </form>
+        </div>
+    </div>
+</div>

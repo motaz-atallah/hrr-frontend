@@ -1,0 +1,13 @@
+
+<app-search-form [filter]="filter" [enableSorting]="true" [sortBy]="sortBy" (searchClick)="onSearchClick($event)" (sortChange)="onSortChange($event.column, $event.sortType)"></app-search-form>
+
+<div class="full-height-width f-flex-column f-flex-justify-center f-flex-align-items-center loader" *ngIf="isLoading$ | async; else body">
+    <kendo-loader type="infinite-spinner" size="large" > </kendo-loader>
+    <div class="k-loading-panel-text">Loading...</div>
+</div>
+<ng-template #body>
+    <div class="f-overflow-y-scroll grid-container">
+        <app-room-card *ngFor="let room of rooms" class="f-flex full-width card" [type]="room.type" [price]="room.price"
+            [name]="room.roomNumber" (click)="onClick(room.id)"></app-room-card>
+    </div>
+</ng-template>

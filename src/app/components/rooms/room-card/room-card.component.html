@@ -1,0 +1,12 @@
+<div class="card-image" (click)="onClick()">
+    <a [ngStyle]="{'background-image': 'url(/assets/images/' + imageName(type) + ')'}"></a>
+    <h3 class="card-tag"> {{ name }}</h3>
+</div>
+<div class="f-flex-column f-flex-align-items-center card-details">
+    <h2 class="card-title"> {{ type | capitalize }} Room </h2>
+    <div class="f-flex-column f-flex-align-items-center card-price">
+        <h3> ${{ price | number:'1.2-2' }}</h3>
+        <h4>PER NIGHT</h4>
+        <button kendoButton type="submit" themeColor="primary" (click)="onClick()">Room Details</button>
+    </div>
+</div>

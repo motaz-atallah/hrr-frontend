@@ -1,0 +1,48 @@
+@import "~@fortawesome/fontawesome-free/css/all.css";
+@import "app/styles/all.scss";
+
+
+.custom-menu {
+  width: 200px;
+  border: 1px solid #ccc;
+  background: $white;
+  padding: 0;
+  @include box-shadow-light(0 2px 5px);
+  cursor: pointer;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  ul li {
+    padding: 8px;
+  }
+
+  ul li:hover {
+    background-color: #f0f0f0;
+  }
+
+  ul li i {
+    float: right;
+    color: green;
+    line-height: 20px;
+    padding: 0 10px;
+  }
+  ul li a {
+    color: #333;
+    text-decoration: none;
+  }
+
+  a.ui-selected {
+    font-weight: bold;
+  }
+}
+
+
+.wrapper,
+.wrapper-inner {
+  max-width: 1300px;
+  margin: 0 auto
+}

@@ -1,0 +1,275 @@
+@import "../../styles/colors.scss";
+
+.site-header {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    background-color: $blue-gray-dark;
+
+    .header-top {
+        padding: 50px 0;
+        font-family: Lato, sans-serif;
+        font-weight: 900;
+        font-size: 11px;
+        letter-spacing: 1px;
+        color: $blue-gray;
+
+        a {
+            color: $blue-gray;
+        }
+
+        .header-logout {
+            font-size: 15px;
+            cursor: pointer;
+            padding: 0 20px;
+
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+
+    .site-header-height {
+        height: 190px;
+    }
+
+    .header-contact ul li {
+        float: left;
+        line-height: 20px;
+        margin-right: 20px;
+        text-transform: uppercase;
+    }
+
+    .header-bottom {
+        position: relative;
+        min-height: 110px;
+
+        .header-logo {
+            position: absolute;
+            top: 0;
+            left: 51%;
+            width: 220px;
+            transform: translateX(-50%);
+        }
+
+        .header-nav ul {
+            display: inline-block;
+            list-style-type: none;
+            margin: 0;
+
+            li {
+                float: left;
+
+                a {
+                    display: block;
+                    height: 44px;
+                    line-height: 44px;
+                    padding: 0 15px;
+                    font-size: 12px;
+                    text-transform: uppercase;
+                    color: $white;
+                    font-family: Lato, sans-serif;
+                    font-weight: 900;
+                    letter-spacing: 2px;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: $reddish-brown;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        .header-nav>ul.nav-left {
+            padding-right: 150px
+        }
+
+        .header-nav>ul.nav-right {
+            padding-left: 150px
+        }
+
+        .header-toggle {
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 60px;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            cursor: pointer;
+            color: $white;
+            background-color: $reddish-brown;
+            border-radius: 50%;
+        }
+    }
+
+    &.header-over {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(to bottom, rgba(36, 50, 74, .65) 0, rgba(0, 0, 0, 0) 100%);
+    }
+}
+
+@media (max-width: 1199px) {
+    .site-header .header-bottom {
+        min-height: inherit;
+        padding-bottom: 60px;
+    
+        .header-logo {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            transform: none;
+    
+            img {
+                max-width: 220px;
+            }
+        }
+    
+        .header-nav {
+            display: none;
+            padding-top: 40px;
+            margin-left: -60px;
+            text-align: left;
+    
+            ul li a {
+                text-align: center;
+            }
+    
+            ul li.sub:after {
+                position: absolute;
+                top: 12px;
+                right: 20px;
+                content: "\f107";
+                display: inline-block;
+                font-size: 18px;
+                color: #828b9d;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+    
+            > ul {
+                display: block;
+            }
+    
+            > ul > li {
+                float: none;
+            }
+    
+            > ul > li.sub > ul {
+                width: 100%;
+                position: static;
+                top: auto;
+                left: auto;
+            }
+    
+            > ul.nav-left,
+            > ul.nav-right {
+                padding: 0;
+                margin: 0;
+            }
+    
+            > ul > li.sub:before,
+            > ul > li.sub:hover:before {
+                display: none;
+            }
+    
+            > ul > li.sub ul li a {
+                text-align: center;
+            }
+    
+            > ul > li.sub ul li ul {
+                position: static;
+                top: auto;
+                left: auto;
+            }
+        }
+    
+        .header-toggle {
+            display: inline-block;
+        }
+    }
+    
+    .site-header.nav-open {
+        background: $blue-gray-dark;
+    
+        .header-bottom .header-nav {
+            display: block;
+        }
+    }
+    
+    .site-footer .footer-top:before {
+        display: none;
+    }
+    
+    .site-footer .footer-top div[class*="col-"],
+    .site-footer .footer-top div[class*="col-"]:last-child {
+        text-align: center;
+        margin-top: 40px;
+    
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    
+    .site-footer .footer-top .widget-social-icons ul {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 991px) {
+    .wrapper,
+    .wrapper-inner {
+        padding-left: 40px;
+        padding-right: 40px
+    }
+
+    .site-header .header-bottom .header-nav {
+        margin-left: -40px;
+        margin-right: -40px
+    }
+
+    .site-footer .footer-bottom .footer-contact ul li,
+    .site-footer .footer-bottom .footer-nav ul li {
+        float: none;
+        margin-bottom: 10px
+    }
+
+    .site-footer .footer-bottom .footer-contact ul li:last-child,
+    .site-footer .footer-bottom .footer-nav ul li:last-child {
+        margin-bottom: 0
+    }
+}
+
+@media (max-width: 767px) {
+    .site-header .header-top {
+        display: none
+    }
+
+    .site-header .header-bottom {
+        padding-top: 60px
+    }
+
+    .site-header .header-bottom .header-toggle {
+        top: inherit;
+        right: inherit;
+        left: 50%;
+        bottom: -30px;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%)
+    }
+
+    .site-footer .footer-top {
+        padding-top: 40px;
+        padding-bottom: 40px
+    }
+}

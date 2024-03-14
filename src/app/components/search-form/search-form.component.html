@@ -1,0 +1,48 @@
+<div class="f-flex-column wrapper">
+    <h3 class="f-flex f-flex-justify-center f-flex-align-content-center lable">SEARCH FOR YOUR ROOM</h3>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <div class="f-flex f-flex-wrap f-flex-justify-center form-wrapper" appDateRange>
+            <div class="f-flex-one form-element">
+                <kendo-datepicker class="input" placeholder="CHECK IN" name="startDate" [(ngModel)]="filter.startDate"
+                    [min]="minDate" format="dd-MM-yyyy" required></kendo-datepicker>
+                <div *ngIf="form.controls['startDate'] && form.controls['startDate'].invalid && form.controls['startDate'].touched"
+                    class="error-message">Check in date is required</div>
+            </div>
+            <div class="f-flex-one form-element">
+                <kendo-datepicker class="input" placeholder="CHECK OUT" name="endDate"
+                    [min]="filter.startDate || minDate" [(ngModel)]="filter.endDate" format="dd-MM-yyyy"
+                    required></kendo-datepicker>
+                <div *ngIf="form.controls['endDate'] && form.controls['endDate'].invalid && form.controls['endDate'].touched"
+                    class="error-message">Check out date is required</div>
+            </div>
+            <div class="f-flex-one form-element">
+                <kendo-dropdownlist class="input" name="type" [valuePrimitive]="true" [data]="areaList"
+                    [textField]="'text'" [valueField]="'value'" [(ngModel)]="filter.type"></kendo-dropdownlist>
+            </div>
+            <div class="f-flex button">
+                <button kendoButton type="submit" themeColor="primary">SEARCH</button>
+                <ng-container *ngIf="enableSorting">
+                    <span #anchor class="fa fas fa-sort" (click)="onToggle()"></span>
+                    <kendo-popup popupClass="custom-menu" [anchor]="anchor" (anchorViewportLeave)="show = false"
+                        *ngIf="show">
+                        <ul>
+                            <li (click)="onSortClick('price', sortType.Descending)">
+                                <a [class.ui-selected]="isSortSelected('price', sortType.Descending)">
+                                    Highest price</a>
+                                <i class="fa fa-duotone fa-check"
+                                    *ngIf="isSortSelected('price', sortType.Descending)"></i>
+                            </li>
+                            <li (click)="onSortClick('price', sortType.Ascending)"><a
+                                    [class.ui-selected]="isSortSelected('price', sortType.Ascending)">
+                                    Cheapest price</a>
+                                <i class="fa fa-duotone fa-check"
+                                    *ngIf="isSortSelected('price', sortType.Ascending)"></i>
+                            </li>
+                        </ul>
+                    </kendo-popup>
+                </ng-container>
+            </div>
+        </div>
+    </form>
+
+</div>

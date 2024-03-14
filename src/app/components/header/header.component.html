@@ -1,0 +1,39 @@
+<div [class]="headerClass">
+    <div class="header-top">
+        <div class="wrapper">
+            <div class="header-contact float-left">
+                <ul>
+                    <li>+00972-564564</li>
+                </ul>
+            </div>
+            <div class="header-logout float-right" (click)="logout()">
+                <i class="fa fa-solid fa-right-from-bracket"></i>
+            </div>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="wrapper">
+            <div class="header-logo">
+                <a><img class="full-width" src="assets/images/logo.png" alt="The Grandium Hotel"></a>
+            </div>
+            <div class="header-nav text-align-center">
+                <ul class="nav-left">
+                    <li><a [class.ui-selected]="isSelectedItem('/home')" (click)="onClick('/home')">HOME</a></li>
+                    <li><a>ABOUT US</a></li>
+                    <li><a [class.ui-selected]="isSelectedItem('/rooms')" (click)="onClick('/rooms')">ROOMS</a></li>
+                    <li><a>AMENITIES</a></li>
+                </ul>
+                <ul class="nav-right">
+                    <li><a>GALLERY</a></li>
+                    <li><a [class.ui-selected]="isSelectedItem('/reservations')"
+                            (click)="onClick('/reservations')">RESERVATIONS</a></li>
+                    <li><a>BLOG</a></li>
+                    <li><a>CONTACT</a></li>
+                </ul>
+            </div>
+            <div class="header-toggle" (click)="onMenuClick()">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </div>
+</div>

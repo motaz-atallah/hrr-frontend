@@ -1,0 +1,28 @@
+@mixin boxed-size() {
+    box-sizing: border-box;
+}
+
+@mixin transform($arguments) {
+    transform: $arguments;
+}
+
+@mixin transition($arguments) {
+    transition: $arguments;
+}
+
+@mixin grid-layout($arguments) {
+    display: grid;
+    grid-template-columns: $arguments;
+}
+
+@mixin box-shadow-light($arguments) {
+    box-shadow: $arguments $f-shadow-light-color;
+}
+
+@mixin position-absolute($top, $left, $bottom, $right) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    bottom: $bottom;
+    right: $right;
+}

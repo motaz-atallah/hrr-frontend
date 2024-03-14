@@ -1,0 +1,20 @@
+.k-calendar .k-calendar-view .k-today,
+.k-button-flat-primary {
+  color: $reddish-brown;
+}
+
+.k-button-solid-primary {
+  border-color: $reddish-brown;
+  &:hover {
+    border-color: $reddish-brown-dark;
+  }
+}
+
+.k-button-solid-primary:hover,
+.k-button-solid-primary,
+.k-button-solid-primary:hover,
+.k-button-solid-primary.k-hover,
+.k-list-item.k-selected,
+.k-selected.k-list-optionlabel {
+  background-color: $reddish-brown;
+}

@@ -1,0 +1,18 @@
+<div class="f-overflow-hidden full-height-width slides">
+  <div class="slide full-height-width" [ngStyle]="{
+        'background-image': 'url(' + slides[currentSlide].url + ')',
+        opacity: hidden ? 0 : 1,
+        transition: 'opacity ' + animationSpeed + 'ms ease, background-color 0.5s ease-in-out'
+      }"></div>
+
+  <ng-container *ngIf="indicatorsVisible">
+    <div class="indicators">
+      <div *ngFor="let slide of slides; let i = index" (click)="jumpToSlide(i)" class="indicator"
+        [ngClass]="{ active: i === currentSlide }">
+      </div>
+    </div>
+  </ng-container>
+
+  <button (click)="next()" class="nextButton">❱</button>
+  <button (click)="previous()" class="previousButton">❰</button>
+</div>

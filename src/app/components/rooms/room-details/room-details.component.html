@@ -1,0 +1,20 @@
+<div class="f-flex-column container" *ngIf="room">
+    <div class="image">
+        <i [ngStyle]="{'background-image': 'url(/assets/images/' + imageName(room.type) + ')'}"></i>
+        <h3 class="tag"> $ {{ room.price | number:'1.2-2' }} PER NIGHT </h3>
+    </div>
+    <div class="details">
+        <app-room-reserve-form (submit)="onSubmit($event)" [room]="room" [disabledDates]="disabledDates"></app-room-reserve-form>
+    </div>
+    <div class="f-flex-column footer">
+        <div class="f-flex-column amenities">
+            <h4>Amenities</h4>
+            <div class="grid-container">
+                <div class="amenity" *ngFor="let amin of room.amenities">
+                    <i class="fa fa-solid fa-check"></i>
+                    <span> {{ amin }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

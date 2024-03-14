@@ -1,0 +1,21 @@
+<h2>Reserve a Room</h2>
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <div class="form-element">
+        <kendo-textbox class="input border" name="guestName" placeholder="GUEST NAME"
+            [(ngModel)]="reservation.guestName" required></kendo-textbox>
+    </div>
+    <div class="form-element">
+        <kendo-datepicker format="yyyy-MM-dd" class="input border" placeholder="CHECK IN" name="startDate"
+            [(ngModel)]="reservation.startDate" format="dd-MM-yyyy" [min]="minDate" [disabledDates]="disabledDates"
+            required></kendo-datepicker>
+    </div>
+    <div class="form-element">
+        <kendo-datepicker format="yyyy-MM-dd" class="input border" placeholder="CHECK OUT" name="endDate"
+            [(ngModel)]="reservation.endDate" format="dd-MM-yyyy" [min]="reservation.startDate || minDate"
+            [disabledDates]="disabledDates" required></kendo-datepicker>
+    </div>
+    <div class="button">
+        <button kendoButton type="submit" class="full-width border" themeColor="primary">RESERVE NOW THIS
+            ROOM</button>
+    </div>
+</form>
