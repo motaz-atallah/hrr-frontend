@@ -8,26 +8,23 @@ To run the development server:
 
 1. Make sure you have Angular CLI installed globally:
 
-npm install -g @angular/cli
-
+    npm install -g @angular/cli
 
 2. Clone this repository:
 
-git clone <repository_url>
-
+    git clone <repository_url>
 
 3. Navigate to the project directory:
 
-cd HotelReservationRoom
+    cd HotelReservationRoom
 
 4. Install dependencies:
 
-npm install
+    npm install
 
 5. Run the development server:
 
-ng serve
-
+    ng serve
 
 6. Open your browser and go to `http://localhost:4200/` to see the application.
 
@@ -43,7 +40,7 @@ ng generate component my-component
 
 To build the project:
 
-ng build
+    ng build
 
 The build artifacts will be stored in the `dist/` directory.
 
@@ -51,7 +48,7 @@ The build artifacts will be stored in the `dist/` directory.
 
 To run unit tests:
 
-ng test
+    ng test
 
 
 
